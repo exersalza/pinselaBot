@@ -1,18 +1,15 @@
 from etc.config import db
 from etc.config import agent_select
+from etc.config import PINSELA
 
 
 def calculate(player1=list, player2=list) -> int:  # ['user_id', 'first ability', 'second ability', 'third ability']
     pass
 
 
-def conv(convert=tuple) -> list:
-    return list(*convert)
-
-
 def fight(user0, user1):
     cur = db.cursor(buffered=True)
-    cur.execute("USE pinselaBot;")
+    cur.execute(PINSELA)
 
     cur.execute("SELECT role from `user` where user_id=%s", (user0,))
     player0role = cur.fetchone()[0]
@@ -29,8 +26,6 @@ def fight(user0, user1):
     player1stats = list(cur.fetchone())
     cur.close()
     db.close()
-
-
 
 
 if __name__ == "__main__":
