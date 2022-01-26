@@ -1,6 +1,16 @@
-from etc.config import db
-from etc.config import agent_select
-from etc.config import PINSELA
+from cogs.etc.config import db
+from cogs.etc.config import agent_select
+from cogs.etc.config import PINSELA
+from nextcord.ext import commands
+
+
+class Game(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+
+def setup(bot):
+    bot.add_cog(Game(bot))
 
 
 def calculate(player1=list, player2=list) -> int:  # ['user_id', 'first ability', 'second ability', 'third ability']
