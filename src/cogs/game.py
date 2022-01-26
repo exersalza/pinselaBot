@@ -35,7 +35,6 @@ def fight(user0, user1):
     cur.execute(sql % (*agent_select[player1role], user1))
     player1stats = list(cur.fetchone())
     cur.close()
-    db.close()
 
 
 if __name__ == "__main__":

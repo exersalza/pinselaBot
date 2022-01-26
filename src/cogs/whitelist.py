@@ -7,7 +7,7 @@ class Whitelist(commands.Cog):
 
     @commands.Command
     async def whitelist(self, ctx):
-        print('inside function')
+        pass
 
 
 def setup(bot):

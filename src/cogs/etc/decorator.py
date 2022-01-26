@@ -3,8 +3,6 @@ from typing import Callable, TypeVar
 from functools import wraps
 
 
-
-
 def has_whitelist_perm(func):
     @wraps(func)
     def wrapper(*ags, **kws):
